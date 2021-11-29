@@ -63,7 +63,7 @@ function createHtml(myProduct) {
             <div class="cart__item__content__settings">
                 <div class="cart__item__content__settings__quantity">
                     <p>Qté : </p>
-                    <input type="number" id="${myProduct._id}-${myProduct.color}" class="itemQuantity" name="itemQuantity" min="1" max="100" value="${myProduct.quantity}" onchange="onChangeQuantity(value, id)">
+                    <input type="number" id="${myProduct._id}-${myProduct.color}" class="itemQuantity" name="itemQuantity" min="1" max="99" value="${myProduct.quantity}" onchange="onChangeQuantity(value, id)">
                 </div>
                 <div class="cart__item__content__settings__delete">
                     <p class="deleteItem" id="${myProduct._id}-${myProduct.color}" onclick='onDelete(this.id)'>Supprimer</p>
@@ -112,6 +112,7 @@ function onDelete(composedId) {
 
 /**  Form errors handling  **/
 
+//check Pattern for firstName input
 function checkFirstNameValidity(event) {
     const id="firstNameErrorMsg";
     const value = event.value;
@@ -119,7 +120,7 @@ function checkFirstNameValidity(event) {
         setErrorMessage(id, 'Veuillez entrer votre prénom.');
         return;
     }
-    if (value.match(/[A-Za-z][A-Za-z-]{1,}$/)) {
+    if (value.match(/[A-Z\w][A-Z\w-]{1,}$/)) {
         setErrorMessage(id, '');
         return;
     } else {
@@ -128,6 +129,7 @@ function checkFirstNameValidity(event) {
     }
 }
 
+//check Pattern for lastName input
 function checkLastNameValidity(event) {
     const id="lastNameErrorMsg";
     const value = event.value;
@@ -135,7 +137,7 @@ function checkLastNameValidity(event) {
         setErrorMessage(id, 'Veuillez entrer votre nom.');
         return;
     }
-    if (value.match(/[A-Za-z][A-Za-z-]{1,}$/)) {
+    if (value.match(/[A-Z\w][A-Z\w-]{1,}$/)) {
         setErrorMessage(id, '');
         return;
     } else {
@@ -144,6 +146,7 @@ function checkLastNameValidity(event) {
     }
 }
 
+//check Pattern for address input
 function checkAddressValidity(event) {
     const id="addressErrorMsg";
     const value = event.value;
@@ -151,7 +154,7 @@ function checkAddressValidity(event) {
         setErrorMessage(id, 'Veuillez entrer une adresse.');
         return;
     }
-    if (value.match(/[0-9]{1,4}[\s,]{1,2}[A-Za-z][A-Za-z\s-]{5,}$/)) {
+    if (value.match(/[0-9]{1,4}[\s,]{1,2}[A-Z\w][A-Z\w\s-]{5,}$/)) {
         setErrorMessage(id, '');
         return;
     } else {
@@ -160,6 +163,7 @@ function checkAddressValidity(event) {
     }
 }
 
+//check Pattern for city input
 function checkCityValidity(event) {
     const id="cityErrorMsg";
     const value = event.value;
@@ -167,7 +171,7 @@ function checkCityValidity(event) {
         setErrorMessage(id, 'Veuillez entrer le nom d\'une ville.');
         return;
     }
-    if (value.match(/[A-Za-z][A-Za-z\s-]{2,}$/)) {
+    if (value.match(/[A-Z\w][A-Z\w\s-]{2,}$/)) {
         setErrorMessage(id, '');
         return;
     } else {
@@ -176,6 +180,7 @@ function checkCityValidity(event) {
     }
 }
 
+//check Pattern for email input
 function checkEmailValidity(event) {
     const id="emailErrorMsg";
     const value = event.value;
@@ -192,6 +197,7 @@ function checkEmailValidity(event) {
     }
 }
 
+//add error message in html element with ID id
 function setErrorMessage(id, error) {
     document.getElementById(id).innerHTML = error;
 }
