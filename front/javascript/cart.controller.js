@@ -120,7 +120,7 @@ function checkFirstNameValidity(event) {
         setErrorMessage(id, 'Veuillez entrer votre prénom.');
         return;
     }
-    if (value.match(/[A-Z\w][A-Z\w-]{1,}$/)) {
+    if (value.match(/[A-zÀ-ú][A-zÀ-ú-]+$/)) {
         setErrorMessage(id, '');
         return;
     } else {
@@ -137,7 +137,7 @@ function checkLastNameValidity(event) {
         setErrorMessage(id, 'Veuillez entrer votre nom.');
         return;
     }
-    if (value.match(/[A-Z\w][A-Z\w-]{1,}$/)) {
+    if (value.match(/[A-zÀ-ú][A-zÀ-ú-]+$/)) {
         setErrorMessage(id, '');
         return;
     } else {
@@ -154,7 +154,7 @@ function checkAddressValidity(event) {
         setErrorMessage(id, 'Veuillez entrer une adresse.');
         return;
     }
-    if (value.match(/[0-9]{1,4}[\s,]{1,2}[A-Z\w][A-Z\w\s-]{5,}$/)) {
+    if (value.match(/[0-9]{1,4}[\s,]{1,2}[A-zÀ-ú][A-zÀ-ú\s'-]{5,}$/)) {
         setErrorMessage(id, '');
         return;
     } else {
@@ -171,7 +171,7 @@ function checkCityValidity(event) {
         setErrorMessage(id, 'Veuillez entrer le nom d\'une ville.');
         return;
     }
-    if (value.match(/[A-Z\w][A-Z\w\s-]{2,}$/)) {
+    if (value.match(/[A-zÀ-ú][A-zÀ-ú\s-]+$/)) {
         setErrorMessage(id, '');
         return;
     } else {
@@ -188,7 +188,7 @@ function checkEmailValidity(event) {
         setErrorMessage(id, 'Veuillez entrer une adresse email.');
         return;
     }
-    if (value.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+    if (value.match(/^[A-zÀ-ú-\.]+@([A-zÀ-ú-]+\.)+[A-zÀ-ú-]{2,4}$/)) {
         setErrorMessage(id, '');
         return;
     } else {

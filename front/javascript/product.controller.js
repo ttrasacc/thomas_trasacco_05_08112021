@@ -61,6 +61,7 @@ function fillProductHtml(product) {
     document.getElementById('colors').innerHTML += colors;
 }
 
+//handle quantity change event
 function onChangeQuantity(quantity) {
     document.getElementById('price').innerHTML = myProduct.price * quantity;
 }

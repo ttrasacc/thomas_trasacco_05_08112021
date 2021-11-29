@@ -81,22 +81,22 @@
                   <label for="firstName">
                     Prénom: 
                   </label>
-                  <input type="text" name="firstName" id="firstName" pattern="[A-Z\w][\w-]{1,}$" oninvalid="checkFirstNameValidity(this)" oninput="checkFirstNameValidity(this)" required>
+                  <input type="text" name="firstName" id="firstName" pattern="[A-zÀ-ú][A-zÀ-ú-]+$" oninvalid="checkFirstNameValidity(this)" oninput="checkFirstNameValidity(this)" required>
                   <p id="firstNameErrorMsg"></p>
                 </div>
                 <div class="cart__order__form__question">
                   <label for="lastName">Nom: </label>
-                  <input type="text" name="lastName" id="lastName" pattern="[A-Z\w][\w-]{1,}$" oninvalid="checkLastNameValidity(this)" oninput="checkLastNameValidity(this)" required>
+                  <input type="text" name="lastName" id="lastName" pattern="[A-zÀ-ú][A-zÀ-ú-]+$" oninvalid="checkLastNameValidity(this)" oninput="checkLastNameValidity(this)" required>
                   <p id="lastNameErrorMsg"></p>
                 </div>
                 <div class="cart__order__form__question">
                   <label for="address">Adresse: </label>
-                  <input type="text" name="address" id="address" pattern="[0-9]{1,4}[\s,]{1,2}[A-Z\w][A-Z\w\s-]{5,}$" oninvalid="checkAddressValidity(this)" oninput="checkAddressValidity(this)" required>
+                  <input type="text" name="address" id="address" pattern="[0-9]{1,4}[\s,]{1,2}[A-zÀ-ú][A-zÀ-ú\s'-]{5,}$" oninvalid="checkAddressValidity(this)" oninput="checkAddressValidity(this)" required>
                   <p id="addressErrorMsg"></p>
                 </div>
                 <div class="cart__order__form__question">
                   <label for="city">Ville: </label>
-                  <input type="text" name="city" id="city" pattern="[A-Z\w][A-Z\w\s-]{2,}$" oninvalid="checkCityValidity(this)" oninput="checkCityValidity(this)" required>
+                  <input type="text" name="city" id="city" pattern="[A-zÀ-ú][A-zÀ-ú\s-]+$" oninvalid="checkCityValidity(this)" oninput="checkCityValidity(this)" required>
                   <p id="cityErrorMsg"></p>
                 </div>
                 <div class="cart__order__form__question">
